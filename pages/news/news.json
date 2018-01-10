@@ -2,5 +2,8 @@
   "navigationBarTitleText": "上拉scroll-view组件刷新",
   "navigationBarBackgroundColor": "#000",
   "navigationBarTextStyle": "white",
-  "backgroundColor": "#e5e5e5"
+  "backgroundColor": "#e5e5e5",
+  "usingComponents": {
+    "loading": "/pages/components/loading/loading"
+  }
 }

@@ -17,16 +17,15 @@ Page({
       success(res) {
         console.log(res)
         if (para) {
+          wx.hideNavigationBarLoading(); 
           self.setData({
             originData: res.data.data
           })
           num = num + 10
-          console.log(num, 1)
         } else {
           self.setData({
             originData: res.data.data
           })
-          console.log(num, 2)
         }
       },
       fail() { },
@@ -59,6 +58,7 @@ Page({
     
   },
   lower(e) {
+    wx.showNavigationBarLoading();
     const self = this
     if (self.timer) {
       clearTimeout(self.timer)

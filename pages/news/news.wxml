@@ -7,5 +7,6 @@
         <view class="tit-2">{{ item.last_reply_at }}</view>
       </view>
     </view>
+    <loading></loading>
   </scroll-view>
 </view>
