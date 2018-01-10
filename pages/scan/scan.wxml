@@ -1,0 +1,14 @@
+<view class="scan">
+  <view wx:for="{{ originData }}" wx:for-index="index" wx:for-item="item" wx:key="key" bindtap="scanCode" bindscroll="PageScroll">
+    {{ index }} -- {{ item.title }}
+  </view>
+
+  <view class="section">
+    <scroll-view scroll-y style="height: 200px;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+      <view id="green" style="height: 200px;" class="scroll-view-item bc_green"></view>
+      <view id="red" style="height: 200px;" class="scroll-view-item bc_red"></view>
+      <view id="yellow" style="height: 200px;" class="scroll-view-item bc_yellow"></view>
+      <view id="blue" style="height: 200px;" class="scroll-view-item bc_blue"></view>
+    </scroll-view>
+  </view>
+</view>

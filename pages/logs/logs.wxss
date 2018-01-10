@@ -1,0 +1,15 @@
+.log-list {
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx;
+}
+.log-item {
+  margin: 10rpx;
+}
+
+
+.test-view {
+    width: 750rpx;
+    height: 30px;
+    background: #333;
+}

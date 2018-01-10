@@ -1,0 +1,7 @@
+<!--pages/components/bottom-nav/bottom-nav.wxml-->
+<view class="nav">
+  <view class="nav-items">1</view>
+  <view class="nav-items">2</view>
+  <view class="nav-items">3</view>
+  <view class="nav-items">4</view>
+</view>
