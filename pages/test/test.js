@@ -7,6 +7,11 @@ Page({
     originData: [],
     timer: null
   },
+  nav: function() {
+    wx.navigateTo({
+      url: '../logs/logs',
+    })
+  },
   GetPageData(n) {
     return new Promise(function (resolve, reject) {
       wx.request({

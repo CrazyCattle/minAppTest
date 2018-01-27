@@ -1,0 +1,57 @@
+.none { display: none !important;}
+.hb {
+  width: 100%;
+  height: 100%;
+  padding-top: 430rpx;
+  /* background: url(../../images/hb/BG.png) center top no-repeat; */
+}
+.hb .img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 108%;
+}
+.hb .hbQuest {
+  width: 520rpx;
+  height: 620rpx;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;  
+}
+.hb .hbQuest .QTitle {
+  min-height: 80rpx;
+  color: #8f391b;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.hb .hbQuest .QAnswer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hb .hbQuest .QRow {
+  width: 100%;
+  height: 82rpx;
+  margin-bottom: 23rpx;
+  line-height: 80rpx;
+  text-align: center;
+  color: #6b3a07;
+  font-size: 26rpx;
+  border: 1px solid #ca2a42;
+  border-radius: 40rpx;
+}
+
+.hb .hbQuest .QRow:last-child {
+  margin-bottom: 0;
+}
+.hb .hbQuest .QRow.active {
+  background-color: #e13439;
+  border-color: #e13439;
+  color: #fff;
+}

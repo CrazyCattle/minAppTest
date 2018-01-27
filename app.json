@@ -4,7 +4,9 @@
     "pages/logs/logs",
     "pages/news/news",
     "pages/test/test",
-    "pages/scan/scan"
+    "pages/scan/scan",
+    "pages/hb/hb",
+    "pages/start/start"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -19,7 +21,7 @@
     "borderStyle": "white",
     "list": [
       {
-       "selectedIconPath": "images/nav/nav-index-active.png",
+        "selectedIconPath": "images/nav/nav-index-active.png",
         "iconPath": "images/nav/nav-index.png",
         "pagePath": "pages/index/index",
         "text": "首页"
@@ -31,7 +33,7 @@
         "text": "上拉刷新"
       },
       {
-       "selectedIconPath": "images/nav/nav-list-active.png",
+        "selectedIconPath": "images/nav/nav-list-active.png",
         "iconPath": "images/nav/nav-list.png",
         "pagePath": "pages/test/test",
         "text": "下拉刷新"

@@ -13,7 +13,7 @@ Page({
   //事件处理函数
   bindViewTap: function () {
     wx.navigateTo({
-      url: '../test/test'
+      url: '../start/start'
     })
   },
   onShow: function () {

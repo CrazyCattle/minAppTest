@@ -3,5 +3,6 @@
   "navigationBarTitleText": "原生下拉刷新",
   "navigationBarBackgroundColor": "#000",
   "navigationBarTextStyle": "white",
-  "backgroundColor": "#e5e5e5"
+  "backgroundColor": "#e5e5e5",
+  "tabBar": {}
 }
