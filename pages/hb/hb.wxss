@@ -2,19 +2,21 @@
 .hb {
   width: 100%;
   height: 100%;
-  padding-top: 430rpx;
+  padding-top: 390rpx;
   /* background: url(../../images/hb/BG.png) center top no-repeat; */
 }
+
 .hb .img {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 108%;
+  height: 100%;
 }
+
 .hb .hbQuest {
-  width: 520rpx;
-  height: 620rpx;
+  width: 460rpx;
+  min-height: 500rpx;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -22,6 +24,7 @@
   position: relative;
   z-index: 1;  
 }
+
 .hb .hbQuest .QTitle {
   min-height: 80rpx;
   color: #8f391b;
@@ -35,11 +38,12 @@
   flex-direction: column;
   justify-content: center;
 }
+
 .hb .hbQuest .QRow {
   width: 100%;
-  height: 82rpx;
-  margin-bottom: 23rpx;
-  line-height: 80rpx;
+  height: 80rpx;
+  margin-bottom: 20rpx;
+  line-height: 78rpx;
   text-align: center;
   color: #6b3a07;
   font-size: 26rpx;
@@ -50,8 +54,23 @@
 .hb .hbQuest .QRow:last-child {
   margin-bottom: 0;
 }
+
 .hb .hbQuest .QRow.active {
   background-color: #e13439;
   border-color: #e13439;
   color: #fff;
+}
+
+.re-start {
+  position: absolute;
+  bottom: 66rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 510rpx;
+  height: 82rpx;
+  line-height: 82rpx;
+  border-radius: 41rpx;
+  text-align: center;
+  background-color: #ffc717;
+  color: #a73721;
 }

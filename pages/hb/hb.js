@@ -157,6 +157,12 @@ Page({
     }
     console.log(this.data.curShow)
   },
+  replay () {
+    this.setData({
+      curShow: 0
+    })
+    console.log(this.curShow)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
