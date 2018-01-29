@@ -1,7 +1,14 @@
 <!--index.wxml-->
 
 <view class="hb-start">
-  <image class="img" src="../../images/hb/index.jpg"></image>
+  <image class="img" src="../../images/index/index.jpg"></image>
+
+  <view class="ckgz">
+    <image class="img" src="../../images/index/ckgz.png"></image>
+  </view>
+  <view class="phb" bindtap="gotophb">
+    <image class="img" src="../../images/index/phb.png"></image>
+  </view>
   <view class="btn" bindtap="start" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
     <image class="img" src="../../images/hb/btn.png"></image>
   </view>

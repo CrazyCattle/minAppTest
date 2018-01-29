@@ -1,25 +1,3 @@
-/**index.wxss**/
-/* .userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
-
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 200px;
-} */
-
 /* pages/start/start.wxss */
 .hb-start {
   position: absolute;
@@ -47,4 +25,27 @@
 .btn .img {
   width: 100%;
   height: 100%;
+}
+
+
+.ckgz,
+.phb {
+  position: absolute;
+  z-index: 10;
+}
+.ckgz {
+  width: 152rpx;
+  height: 214rpx;
+  top: 500rpx;
+  right: 20rpx;
+}
+.phb {
+  width: 174rpx;
+  height: 271rpx;
+  top: 470rpx;
+  left: 15rpx;
+}
+.ckgz .img,
+.phb .img {
+  width: 100%;
 }

@@ -36,6 +36,11 @@ Page({
   onLoad: function () {
     console.log(this.originData)
   },
+  gotophb () {
+    wx.navigateTo({
+      url: '../phb/phb'
+    })
+  },
   getUserData () {
     if (app.globalData.userInfo) {
       this.setData({

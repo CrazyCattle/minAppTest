@@ -6,7 +6,8 @@
     "pages/test/test",
     "pages/scan/scan",
     "pages/hb/hb",
-    "pages/start/start"
+    "pages/start/start",
+    "pages/phb/phb"
   ],
   "window": {
     "backgroundTextStyle": "light",
