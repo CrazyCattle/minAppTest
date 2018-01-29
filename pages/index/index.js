@@ -7,8 +7,14 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    canIUse: '',
     originData: []
+  },
+  start() {
+    this.setData({
+      canIUse: wx.canIUse('.open-type.getUserInfo')
+    })
+    this.getUserData()
   },
   //事件处理函数
   bindViewTap: function () {
@@ -27,10 +33,15 @@ Page({
   },
   onLoad: function () {
     console.log(this.originData)
+  },
+  getUserData () {
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
+      })
+      wx.navigateTo({
+        url: '../hb/hb'
       })
     } else if (this.data.canIUse) {
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
@@ -39,6 +50,9 @@ Page({
         this.setData({
           userInfo: res.userInfo,
           hasUserInfo: true
+        })
+        wx.navigateTo({
+          url: '../hb/hb'
         })
       }
     } else {
@@ -49,6 +63,9 @@ Page({
           this.setData({
             userInfo: res.userInfo,
             hasUserInfo: true
+          })
+          wx.navigateTo({
+            url: '../hb/hb'
           })
         }
       })
