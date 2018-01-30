@@ -1,9 +1,9 @@
 <view class="phb">
   <image class="img" src="../../images/dz_BG.jpg"></image>
 
-  <scroll-view class="scrollViewBox">
+  <scroll-view scroll-y class="scrollViewBox" style="height: 100%;" bindscrolltolower="lower" scroll-top="{{scrollTop}}">
     <image class="user_pic" src="../../images/user_pic.png"></image>
-    <view class="user_name tc">lover （第3名） </view>
+    <view class="user_name tc">lover (第3名) </view>
     <view class="icon_box tc">
       <view class="zan_icon">赞</view>4个
     </view>

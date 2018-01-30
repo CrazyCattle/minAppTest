@@ -9,6 +9,9 @@
   right: 0;
   left: 0;
 }
+.scrollViewBox {
+  padding-bottom: 50rpx;
+}
 .phb > .img {
   position: absolute;
   top: 0;
@@ -56,12 +59,14 @@
 .phb_list .row .pm {
   position: absolute;
   width: 92rpx;
-  height: 82rpx;
+  height: 80rpx;
   left: 0;
   top: 30rpx;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #959595;
+  font-size: 30rpx;
 }
 .phb_list .pm .img {
   width: 58rpx;
@@ -83,7 +88,7 @@
 .phb_list .content .row_rt {
   width: 126rpx;
   height: 52rpx;
-  line-height: 50rpx;
+  line-height: 52rpx;
   text-align: center;
   color: #dc000f;
   font-size: 28rpx;

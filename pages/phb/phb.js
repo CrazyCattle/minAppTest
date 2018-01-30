@@ -7,6 +7,7 @@ Page({
    */
   data: {
     // avarpicUrl: app.gloablData
+    scrollTop: 0,
     phb: [
       {
         mc: 1,
@@ -32,10 +33,32 @@ Page({
         mc: 5,
         pic_url: '../../images/o_u_pic.png',
         zan: 5
+      },
+      {
+        mc: 5,
+        pic_url: '../../images/o_u_pic.png',
+        zan: 5
+      },
+      {
+        mc: 5,
+        pic_url: '../../images/o_u_pic.png',
+        zan: 5
+      },
+      {
+        mc: 5,
+        pic_url: '../../images/o_u_pic.png',
+        zan: 5
+      },
+      {
+        mc: 5,
+        pic_url: '../../images/o_u_pic.png',
+        zan: 5
       }
     ]
   },
-
+  lower () {
+    console.log(1)
+  }, 
   /**
    * 生命周期函数--监听页面加载
    */
