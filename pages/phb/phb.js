@@ -7,57 +7,113 @@ Page({
    */
   data: {
     // avarpicUrl: app.gloablData
+    timer: null,
+    showLoading: false,
     scrollTop: 0,
+    mockData: [
+      {
+        mc: 7,
+        pic_url: '../../images/o_u_pic.png',
+        zan: 50,
+        name: 'this is test'
+      },
+      {
+        mc: 7,
+        pic_url: '../../images/o_u_pic.png',
+        zan: 50,
+        name: 'this is test'
+      },
+      {
+        mc: 7,
+        pic_url: '../../images/o_u_pic.png',
+        zan: 50,
+        name: 'this is test'
+      }, {
+        mc: 7,
+        pic_url: '../../images/o_u_pic.png',
+        zan: 50,
+        name: 'this is test'
+      },
+      {
+        mc: 7,
+        pic_url: '../../images/o_u_pic.png',
+        zan: 50,
+        name: 'this is test'
+      }
+    ],
     phb: [
       {
         mc: 1,
         pic_url: '../../images/o_u_pic.png',
-        zan: 50
+        zan: 50,
+        name: 'this is test'
       },
       {
         mc: 2,
         pic_url: '../../images/o_u_pic.png',
-        zan: 45
+        zan: 45,
+        name: 'this is test'
       },
       {
         mc: 3,
         pic_url: '../../images/o_u_pic.png',
-        zan: 30
+        zan: 30,
+        name: 'this is test'
       },
       {
         mc: 4,
         pic_url: '../../images/o_u_pic.png',
-        zan: 10
+        zan: 10,
+        name: 'this is test'
       },
       {
         mc: 5,
         pic_url: '../../images/o_u_pic.png',
-        zan: 5
+        zan: 5,
+        name: 'this is test'
       },
       {
         mc: 5,
         pic_url: '../../images/o_u_pic.png',
-        zan: 5
+        zan: 5,
+        name: 'this is test'
       },
       {
         mc: 5,
         pic_url: '../../images/o_u_pic.png',
-        zan: 5
+        zan: 5,
+        name: 'this is test'
       },
       {
         mc: 5,
         pic_url: '../../images/o_u_pic.png',
-        zan: 5
+        zan: 5,
+        name: 'this is test'
       },
       {
         mc: 5,
         pic_url: '../../images/o_u_pic.png',
-        zan: 5
+        zan: 5,
+        name: 'this is test'
       }
     ]
   },
   lower () {
-    console.log(1)
+    // 排行榜 无限加载
+    this.setData({
+      showLoading: true
+    })
+    if (this.timer) {
+      console.log(111)
+      clearTimeout(this.timer)
+    }
+    this.timer = setTimeout(() => {
+      this.setData({
+        phb: this.data.phb.concat(this.data.mockData),
+        showLoading: false
+      })
+      clearTimeout(this.timer)
+    }, 500)
   }, 
   /**
    * 生命周期函数--监听页面加载

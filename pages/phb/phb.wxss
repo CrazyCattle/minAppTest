@@ -100,7 +100,10 @@
   height: 80rpx;
 }
 .phb_list .row_lf .text {
-  display: inline-block;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-around;
   padding-left: 15rpx;
   color: #b2111c;
   font-size: 26rpx;
@@ -117,4 +120,11 @@
   font-size: 24rpx;
   color: #fffac1;
   background-color: #dc000f;
+}
+
+.loadmore {
+  padding: 30rpx;
+  text-align: center;
+  font-size: 10px;
+  color: #fff;
 }

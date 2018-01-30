@@ -27,14 +27,17 @@
           <view class="row_lf">
             <image class="img" src="{{ item.pic_url }}"></image>
             <view class="text">
-              <view class="zan_icon">赞</view>
-              <text>{{ item.zan }}</text>
+              <view class="o_user_name">{{ item.name }}</view>
+              <view>
+                <view class="zan_icon">赞</view>
+                <text>{{ item.zan }}</text>
+              </view>
             </view>
           </view>
           <view class="row_rt">赞一个</view>
         </view>
       </view>
     </view>
-
+    <view class="loadmore" wx:if="{{ showLoading }}">正在加载更多</view>
   </scroll-view>
 </view>
