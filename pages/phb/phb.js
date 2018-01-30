@@ -6,7 +6,34 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    // avarpicUrl: app.gloablData
+    phb: [
+      {
+        mc: 1,
+        pic_url: '../../images/o_u_pic.png',
+        zan: 50
+      },
+      {
+        mc: 2,
+        pic_url: '../../images/o_u_pic.png',
+        zan: 45
+      },
+      {
+        mc: 3,
+        pic_url: '../../images/o_u_pic.png',
+        zan: 30
+      },
+      {
+        mc: 4,
+        pic_url: '../../images/o_u_pic.png',
+        zan: 10
+      },
+      {
+        mc: 5,
+        pic_url: '../../images/o_u_pic.png',
+        zan: 5
+      }
+    ]
   },
 
   /**

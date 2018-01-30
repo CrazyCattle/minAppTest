@@ -1,3 +1,40 @@
 <view class="phb">
   <image class="img" src="../../images/dz_BG.jpg"></image>
+
+  <scroll-view class="scrollViewBox">
+    <image class="user_pic" src="../../images/user_pic.png"></image>
+    <view class="user_name tc">lover （第3名） </view>
+    <view class="icon_box tc">
+      <view class="zan_icon">赞</view>4个
+    </view>
+
+    <view class="phb_list">
+      <view class="row" wx:for="{{ phb }}" wx:for-index="index" wx:key="key" wx:for-item="item">
+        <view wx:if="{{ item.mc == 1 }}" class="pm">
+          <image src="../../images/num_1.png" class="img"></image>
+        </view>
+        <view wx:elif="{{ item.mc == 2 }}" class="pm">
+          <image src="../../images/num_2.png" class="img"></image>
+        </view>
+        <view wx:elif="{{ item.mc == 3 }}" class="pm">
+          <image src="../../images/num_3.png" class="img"></image>
+        </view>
+        <view wx:else class="pm">
+          <text>{{ item.mc }}</text>
+        </view>
+
+        <view class="content">
+          <view class="row_lf">
+            <image class="img" src="{{ item.pic_url }}"></image>
+            <view class="text">
+              <view class="zan_icon">赞</view>
+              <text>{{ item.zan }}</text>
+            </view>
+          </view>
+          <view class="row_rt">赞一个</view>
+        </view>
+      </view>
+    </view>
+
+  </scroll-view>
 </view>

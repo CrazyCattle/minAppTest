@@ -1,5 +1,115 @@
 /* pages/phb/phb.wxss */
+.tc {
+  text-align: center;
+}
 .phb {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+.phb > .img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
-  background-size: 100% auto;
+}
+
+.scrollViewBox .user_pic {
+  display: block;
+  width: 136rpx;
+  height: 138rpx;
+  margin: 25rpx auto 20rpx;
+}
+
+.scrollViewBox .user_name {
+  font-size: 30rpx;
+  color: #f9eed1;
+}
+.scrollViewBox .icon_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20rpx 0 20rpx;
+  font-size: 26rpx;
+  color: #fbebcf;
+}
+
+
+.phb_list {
+  width: 698rpx;
+  margin: auto;
+  border-radius: 15rpx;
+  background-color: #fff;
+}
+.phb_list .row {
+  display: flex;
+  padding: 30rpx 38rpx 30rpx 92rpx;
+  border-bottom: 1rpx solid #f2f2f2;
+  position: relative;
+}
+.phb_list .row:last-child {
+  border-bottom: none;
+}
+.phb_list .row .pm {
+  position: absolute;
+  width: 92rpx;
+  height: 82rpx;
+  left: 0;
+  top: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.phb_list .pm .img {
+  width: 58rpx;
+  height: 69rpx;
+}
+.phb_list .content {
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+}
+.phb_list .content .row_lf {
+  flex: 1;
+  display: flex;
+  /* flex-direction: column;
+  justify-content: flex-end; */
+  align-items: flex-end;
+}
+.phb_list .content .row_rt {
+  width: 126rpx;
+  height: 52rpx;
+  line-height: 50rpx;
+  text-align: center;
+  color: #dc000f;
+  font-size: 28rpx;
+  border: 1rpx solid #dc000f;
+}
+.phb_list .row_lf .img {
+  display: inline-block;
+  width: 80rpx;
+  height: 80rpx;
+}
+.phb_list .row_lf .text {
+  display: inline-block;
+  padding-left: 15rpx;
+  color: #b2111c;
+  font-size: 26rpx;
+}
+
+/* 赞  图标 */
+.zan_icon {
+  display: inline-block;
+  width: 38rpx;
+  height: 38rpx;
+  margin-right: 10rpx;
+  line-height: 38rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #fffac1;
+  background-color: #dc000f;
 }
