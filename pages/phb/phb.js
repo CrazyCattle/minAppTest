@@ -15,19 +15,19 @@ Page({
         mc: 7,
         pic_url: '../../images/o_u_pic.png',
         zan: 50,
-        name: 'this is test'
+        name: 'Mr.wu'
       },
       {
         mc: 7,
         pic_url: '../../images/o_u_pic.png',
         zan: 50,
-        name: 'this is test'
+        name: '中文测试'
       },
       {
         mc: 7,
         pic_url: '../../images/o_u_pic.png',
         zan: 50,
-        name: 'this is test'
+        name: '12丶3'
       }, {
         mc: 7,
         pic_url: '../../images/o_u_pic.png',
@@ -46,19 +46,19 @@ Page({
         mc: 1,
         pic_url: '../../images/o_u_pic.png',
         zan: 50,
-        name: 'this is test'
+        name: 'Mr.wu'
       },
       {
         mc: 2,
         pic_url: '../../images/o_u_pic.png',
         zan: 45,
-        name: 'this is test'
+        name: '中文测试'
       },
       {
         mc: 3,
         pic_url: '../../images/o_u_pic.png',
         zan: 30,
-        name: 'this is test'
+        name: '哈123丶123哈'
       },
       {
         mc: 4,

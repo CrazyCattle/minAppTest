@@ -24,7 +24,7 @@
   display: block;
   width: 136rpx;
   height: 138rpx;
-  margin: 25rpx auto 20rpx;
+  margin: 15rpx auto 10rpx;
 }
 
 .scrollViewBox .user_name {
@@ -35,7 +35,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20rpx 0 20rpx;
+  padding: 10rpx 0 20rpx;
   font-size: 26rpx;
   color: #fbebcf;
 }
@@ -101,14 +101,18 @@
 }
 .phb_list .row_lf .text {
   display: flex;
-  height: 100%;
+  height: 80rpx;
+  line-height: 100%;
   flex-direction: column;
   justify-content: space-around;
   padding-left: 15rpx;
   color: #b2111c;
   font-size: 26rpx;
 }
-
+.phb_list .row_lf .o_user_name {
+  font-size: 28rpx;
+  color: #333;
+}
 /* 赞  图标 */
 .zan_icon {
   display: inline-block;
@@ -120,6 +124,19 @@
   font-size: 24rpx;
   color: #fffac1;
   background-color: #dc000f;
+}
+/* 抽奖按钮 */
+.luck_draw {
+  display: inline-block;
+  height: 52rpx;
+  width: 120rpx;
+  margin-right: 10rpx;
+  border-radius: 26rpx;
+  line-height: 52rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #de2d2e;
+  background-color: #ffd800;
 }
 
 .loadmore {

@@ -5,6 +5,7 @@
     <image class="user_pic" src="../../images/user_pic.png"></image>
     <view class="user_name tc">lover (第3名) </view>
     <view class="icon_box tc">
+      <view class="luck_draw">抽奖</view>
       <view class="zan_icon">赞</view>4个
     </view>
 
