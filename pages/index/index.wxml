@@ -3,7 +3,7 @@
 <view class="hb-start">
   <image class="img" src="../../images/index/index.jpg"></image>
 
-  <view class="ckgz">
+  <view class="ckgz" bindtap="sRule">
     <image class="img" src="../../images/index/ckgz.png"></image>
   </view>
   <view class="phb" bindtap="gotophb">
@@ -11,6 +11,17 @@
   </view>
   <view class="btn" bindtap="start" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
     <image class="img" src="../../images/hb/btn.png"></image>
+  </view>
+
+  <view class="mask {{showRuleMask?'':'none'}}"></view>
+  <view class="rule_box {{showRuleMask?'active':''}}">
+    <view class="close" bindtap="sRule">
+      <image class="img" src="../../images/close.png"></image>
+    </view>
+    <view class="row">点击开始游戏，根据给出的题目选择你心中理想的选项，没有时间限制，没有固定的选项。
+</view>
+    <view class="row">我们会根据你的选项赠送一副对联结果可分享给朋友或者分享到朋友圈让好友点赞，集满10个赞，就有一次机会获得现金红包抽奖，最低的1.66元，最高88元。</view>
+    <image class="img" src="../../images/rule.png"></image>
   </view>
 </view>
 

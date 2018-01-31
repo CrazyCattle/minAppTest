@@ -8,15 +8,19 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: '',
-    originData: []
+    originData: [],
+    showRuleMask: false
   },
   start() {
     this.setData({
       canIUse: wx.canIUse('view.open-type.getUserInfo')
     })
-
-    console.log(app.globalData)
     this.getUserData()
+  },
+  sRule() {
+    this.setData({
+      showRuleMask: !this.data.showRuleMask
+    })
   },
   //事件处理函数
   bindViewTap: function () {
