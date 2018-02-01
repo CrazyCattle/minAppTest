@@ -114,3 +114,14 @@
   border-radius: 50%;
   background-color: #ffd7a4;
 }
+
+.valiInfor {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%; 
+  z-index: 10;
+  background-color: transparent;
+  border: none;
+}

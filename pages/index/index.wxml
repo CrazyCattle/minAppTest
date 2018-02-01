@@ -9,8 +9,11 @@
   <view class="phb" bindtap="gotophb">
     <image class="img" src="../../images/index/phb.png"></image>
   </view>
-  <view class="btn" bindtap="start" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+   <!-- open-type="getUserInfo" bindgetuserinfo="getUserInfo" -->
+  <!-- <view class="btn" bindtap="start"> -->
+  <view class="btn">
     <image class="img" src="../../images/hb/btn.png"></image>
+    <button class="valiInfor" open-type="getUserInfo" bindgetuserinfo="getUserInfo"></button>
   </view>
 
   <view class="mask {{showRuleMask?'':'none'}}"></view>
