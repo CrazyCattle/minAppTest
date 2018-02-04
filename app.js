@@ -11,17 +11,27 @@ App({
     })
 
     // 登录
-    wx.login({
-      success: res => {
-        wx.request({
-          url: `https://api.weixin.qq.com/sns/jscode2session?appid=wxf6b0e027b812840b&secret=d25fd2e129ca068bf3c605571dafae38&js_code=${res.code}&grant_type=authorization_code`,
-          success: res => {
+    new Promise((resolve, reject)=> {
+      wx.login({
+        success: res => {
+          resolve(res)
+        }
+      })
+    }).then((res) => {
+      // 获取 openid 以及 session_key
+      wx.request({
+        url: `https://api.weixin.qq.com/sns/jscode2session?appid=wx2456cc76cdec8d8e&secret=f464b012b6cf442dc3c79d31e3b256c5&js_code=${res.code}&grant_type=authorization_code`,
+        success: res => {
+          console.log(res)
+          if (res.errMsg == 'request:ok') {
             // openid session_key expires_in
             const { openid, session_key, expires_in } = res.data
+            console.log(openid, session_key, expires_in)
           }
-        })
-      }
+        }
+      })
     })
+    
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -29,6 +39,7 @@ App({
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
             success: res => {
+              console.log(res)
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
 
