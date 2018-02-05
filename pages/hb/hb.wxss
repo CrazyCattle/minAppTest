@@ -26,17 +26,12 @@
 }
 
 .hb .hbQuest .QTitle {
-  min-height: 80rpx;
+  display: flex;
+  align-items: center;
+  min-height: 150rpx;
   color: #8f391b;
   font-size: 30rpx;
   font-weight: bold;
-}
-
-.hb .hbQuest .QAnswer {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .hb .hbQuest .QRow {
@@ -73,4 +68,11 @@
   text-align: center;
   background-color: #ffc717;
   color: #a73721;
+}
+.re-start .img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
 }

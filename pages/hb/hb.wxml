@@ -10,5 +10,8 @@
     </view>
   </view>
 
-  <view class="re-start" bindtap="replay">重新开始</view>
+  <view class="re-start" bindtap="replay">
+    <image class="img" src="../../images/restart.png"></image>
+    重新开始
+  </view>
 </view>

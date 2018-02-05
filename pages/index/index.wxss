@@ -1,21 +1,152 @@
-/**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* pages/start/start.wxss */
+.hb-start {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+.hb-start > .img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
+.btn {
+  position: absolute;
+  width: 538rpx;
+  height: 130rpx;
+  bottom: 50rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.btn .img {
+  width: 100%;
+  height: 100%;
+}
+
+
+.ckgz,
+.phb {
+  position: absolute;
+  z-index: 10;
+}
+.ckgz {
+  width: 152rpx;
+  height: 314rpx;
+  top: 500rpx;
+  right: 20rpx;
+}
+.phb {
+  width: 174rpx;
+  height: 271rpx;
+  top: 470rpx;
+  left: 15rpx;
+}
+.ckgz .img,
+.phb .img {
+  width: 100%;
+  height: 271rpx;
+}
+.ckgz .img,
+.ckgz .btn {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 214rpx;
+}
+.ckgz .cj {
+  top: 180rpx;
+  height: 136rpx;
+}
+.ckgz .lbtn {
+  position: absolute;
+  height: 70rpx;
+  width: 100%;
+}
+.ckgz .sRuleBtn {
+  top: 85rpx;
+}
+.ckgz .ckRBtn {
+  top: 178rpx;
+}
+
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0,0,0,.6);
+  z-index: 100;
+}
+.rule_box {
+  box-sizing: border-box;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 612rpx;
+  height: 950rpx;
+  padding: 160rpx 80rpx 0 100rpx;
+  margin-top: -475rpx;
+  margin-left: -306rpx;
+  transform: translateY(-900rpx);
+  opacity: 0; 
+  z-index: 200;
+  transition: transform .3s ease-in-out, opacity .3s linear;
+}
+.rule_box.active {
+  transform: translateY(0);
+  opacity: 1; 
+}
+.rule_box .close {
+  position: absolute;
+  top: 85rpx;
+  right: 50rpx;
+  width: 35rpx;
+  height: 35rpx;
+  z-index: 101;
+}
+.rule_box .img {
+  width: 100%;
+  height: 100%;
+}
+.rule_box > .img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.rule_box .row {
+  padding-top: 40rpx;
+  line-height: 50rpx; 
+  color: #fff;
+  font-size: 28rpx;
+  z-index: 300;
+  position: relative;
+}
+.rule_box .row::before {
+  content: '';
+  position: absolute;
+  width: 10rpx;
+  height: 10rpx;
+  left: -20rpx;
+  top: 70rpx;
   border-radius: 50%;
+  background-color: #ffd7a4;
 }
 
-.userinfo-nickname {
-  color: #aaa;
+.valiInfor {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%; 
+  z-index: 10;
+  background-color: transparent;
+  border: none;
 }
-
-.usermotto {
-  margin-top: 200px;
+.valiInfor::after {
+  border: none;
 }

@@ -6,13 +6,32 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        console.log(res)
-      }
+    wx.showShareMenu({
+      withShareTicket: true
     })
+
+    // 登录
+    new Promise((resolve, reject)=> {
+      wx.login({
+        success: res => {
+          resolve(res)
+        }
+      })
+    }).then((res) => {
+      // 获取 openid 以及 session_key
+      wx.request({
+        url: `https://api.weixin.qq.com/sns/jscode2session?appid=wx2456cc76cdec8d8e&secret=f464b012b6cf442dc3c79d31e3b256c5&js_code=${res.code}&grant_type=authorization_code`,
+        success: res => {
+          console.log(res)
+          if (res.errMsg == 'request:ok') {
+            // openid session_key expires_in
+            const { openid, session_key, expires_in } = res.data
+            console.log(openid, session_key, expires_in)
+          }
+        }
+      })
+    })
+    
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -20,6 +39,7 @@ App({
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
             success: res => {
+              console.log(res)
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
 

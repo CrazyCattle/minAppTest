@@ -1,5 +1,38 @@
 <!--index.wxml-->
-<view class="container">
+
+<view class="hb-start">
+  <image class="img" src="../../images/index/index.jpg"></image>
+
+  <view class="ckgz">
+    <image class="img" src="../../images/index/ckgz.png"></image>
+    <image class="img cj" src="../../images/index/cj.png"></image>
+    <view class="lbtn sRuleBtn" bindtap="sRule"></view>
+    <view class="lbtn ckRBtn" bindtap="ckR"></view>
+  </view>
+  <view class="phb" bindtap="gotophb">
+    <image class="img" src="../../images/index/phb.png"></image>
+  </view>
+   <!-- open-type="getUserInfo" bindgetuserinfo="getUserInfo" -->
+  <!-- <view class="btn" bindtap="start"> -->
+  <view class="btn">
+    <image class="img" src="../../images/hb/btn.png"></image>
+    <button class="valiInfor" open-type="getUserInfo" bindgetuserinfo="getUserInfo"></button>
+  </view>
+
+  <view class="mask {{showRuleMask?'':'none'}}"></view>
+  <view class="rule_box {{showRuleMask?'active':''}}">
+    <view class="close" bindtap="sRule">
+      <image class="img" src="../../images/close.png"></image>
+    </view>
+    <view class="row">点击开始游戏，系统会随机抽5道题，根据给出的题目选择你心中理想的选项，没有时间限制，没有固定的选项。</view>
+    <view class="row">系统会根据你的选项赠送一副对联，将结果分享至好友或者微信群，通过你的分享点击进来的好友数排在前100名，即可获得系统送出的现金红包，最高388元。
+游戏规则调整了。</view>
+    <image class="img" src="../../images/rule.png"></image>
+  </view>
+</view>
+
+
+<!-- <view class="container">
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
@@ -10,4 +43,4 @@
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
-</view>
+</view> -->

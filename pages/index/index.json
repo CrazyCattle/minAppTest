@@ -1,7 +1,6 @@
 {
   "navigationBarTitleText": "主页",
-  "navigationBarBackgroundColor": "#000",
-  "navigationBarTextStyle": "white",
-  "backgroundColor": "#e5e5e5",
-  "disableScroll": true
+  "navigationBarBackgroundColor": "#e23d26",
+  "disableScroll": true,
+  "navigationBarTextStyle": "white"
 }
