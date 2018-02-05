@@ -24,32 +24,42 @@
   display: block;
   width: 136rpx;
   height: 138rpx;
-  margin: 15rpx auto 10rpx;
+  margin: 0 auto 15rpx;
 }
 
 .scrollViewBox .user_name {
-  font-size: 30rpx;
+  padding: 5rpx;
+  font-size: 28rpx;
   color: #f9eed1;
 }
 .scrollViewBox .icon_box {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10rpx 0 20rpx;
+  padding: 10rpx 0 40rpx;
   font-size: 26rpx;
   color: #fbebcf;
 }
-
+.scrollViewBox .bns {
+  display: flex;
+  align-items: flex-end;
+  font-size: 26rpx;
+}
+.scrollViewBox .number {
+  font-size: 30rpx;
+}
 
 .phb_list {
+  box-sizing: border-box;
   width: 698rpx;
   margin: auto;
+  padding: 0 40rpx;
   border-radius: 15rpx;
   background-color: #fff;
 }
 .phb_list .row {
   display: flex;
-  padding: 30rpx 38rpx 30rpx 92rpx;
+  padding: 30rpx 0;
   border-bottom: 1rpx solid #f2f2f2;
   position: relative;
 }
@@ -86,12 +96,13 @@
   align-items: flex-end;
 }
 .phb_list .content .row_rt {
-  width: 126rpx;
-  height: 52rpx;
-  line-height: 52rpx;
+  width: 140rpx;
+  height: 60rpx;
+  line-height: 60rpx;
   text-align: center;
   color: #dc000f;
   font-size: 28rpx;
+  border-radius: 5rpx;
   border: 1rpx solid #dc000f;
 }
 .phb_list .row_lf .img {
@@ -113,10 +124,13 @@
   font-size: 28rpx;
   color: #333;
 }
+.t-bns {
+  padding-left: 10rpx;
+}
 /* 赞  图标 */
-.zan_icon {
+.bns_icon {
   display: inline-block;
-  width: 38rpx;
+  width: 85rpx;
   height: 38rpx;
   margin-right: 10rpx;
   line-height: 38rpx;

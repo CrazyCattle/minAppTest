@@ -3,8 +3,11 @@
 <view class="hb-start">
   <image class="img" src="../../images/index/index.jpg"></image>
 
-  <view class="ckgz" bindtap="sRule">
+  <view class="ckgz">
     <image class="img" src="../../images/index/ckgz.png"></image>
+    <image class="img cj" src="../../images/index/cj.png"></image>
+    <view class="lbtn sRuleBtn" bindtap="sRule"></view>
+    <view class="lbtn ckRBtn" bindtap="ckR"></view>
   </view>
   <view class="phb" bindtap="gotophb">
     <image class="img" src="../../images/index/phb.png"></image>

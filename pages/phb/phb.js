@@ -14,87 +14,107 @@ Page({
       {
         mc: 7,
         pic_url: '../../images/o_u_pic.png',
-        zan: 50,
-        name: 'Mr.wu'
+        bns: 50,
+        name: 'Mr.wu',
+        openid: '1'
       },
       {
         mc: 7,
         pic_url: '../../images/o_u_pic.png',
-        zan: 50,
-        name: '中文测试'
+        bns: 50,
+        name: '中文测试',
+        openid: '2'
       },
       {
         mc: 7,
         pic_url: '../../images/o_u_pic.png',
-        zan: 50,
-        name: '12丶3'
+        bns: 50,
+        name: '12丶3',
+        openid: '3'
       }, {
         mc: 7,
         pic_url: '../../images/o_u_pic.png',
-        zan: 50,
-        name: 'this is test'
+        bns: 50,
+        name: 'this is test',
+        openid: '4'
       },
       {
         mc: 7,
         pic_url: '../../images/o_u_pic.png',
-        zan: 50,
-        name: 'this is test'
+        bns: 50,
+        name: 'this is test',
+        openid: '5'
       }
     ],
     phb: [
       {
         mc: 1,
         pic_url: '../../images/o_u_pic.png',
-        zan: 50,
-        name: 'Mr.wu'
+        bns: 50,
+        name: 'Mr.wu',
+        openid: '6'
       },
       {
         mc: 2,
         pic_url: '../../images/o_u_pic.png',
-        zan: 45,
-        name: '中文测试'
+        bns: 45,
+        name: '中文测试',
+        openid: '7'
       },
       {
         mc: 3,
         pic_url: '../../images/o_u_pic.png',
-        zan: 30,
-        name: '哈123丶123哈'
+        bns: 30,
+        name: '哈123丶123哈',
+        openid: '8'
       },
       {
         mc: 4,
         pic_url: '../../images/o_u_pic.png',
-        zan: 10,
-        name: 'this is test'
+        bns: 10,
+        name: 'this is test',
+        openid: '9'
       },
       {
         mc: 5,
         pic_url: '../../images/o_u_pic.png',
-        zan: 5,
-        name: 'this is test'
+        bns: 5,
+        name: 'this is test',
+        openid: '10',
+      }, {
+        mc: 1,
+        pic_url: '../../images/o_u_pic.png',
+        bns: 50,
+        name: 'Mr.wu',
+        openid: '6'
+      },
+      {
+        mc: 2,
+        pic_url: '../../images/o_u_pic.png',
+        bns: 45,
+        name: '中文测试',
+        openid: '7'
+      },
+      {
+        mc: 3,
+        pic_url: '../../images/o_u_pic.png',
+        bns: 30,
+        name: '哈123丶123哈',
+        openid: '8'
+      },
+      {
+        mc: 4,
+        pic_url: '../../images/o_u_pic.png',
+        bns: 10,
+        name: 'this is test',
+        openid: '9'
       },
       {
         mc: 5,
         pic_url: '../../images/o_u_pic.png',
-        zan: 5,
-        name: 'this is test'
-      },
-      {
-        mc: 5,
-        pic_url: '../../images/o_u_pic.png',
-        zan: 5,
-        name: 'this is test'
-      },
-      {
-        mc: 5,
-        pic_url: '../../images/o_u_pic.png',
-        zan: 5,
-        name: 'this is test'
-      },
-      {
-        mc: 5,
-        pic_url: '../../images/o_u_pic.png',
-        zan: 5,
-        name: 'this is test'
+        bns: 5,
+        name: 'this is test',
+        openid: '10',
       }
     ]
   },
@@ -115,6 +135,12 @@ Page({
       clearTimeout(this.timer)
     }, 500)
   }, 
+  viewTheCouplet (e) {
+    console.log(e.target.dataset.id)
+    wx.navigateTo({
+      url: `../test/test?openid=${e.target.dataset.id}`
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

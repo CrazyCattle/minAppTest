@@ -6,7 +6,7 @@
   width: 100%;
   height: 100%;
 }
-.hb-start .img {
+.hb-start > .img {
   position: absolute;
   top: 0;
   left: 0;
@@ -35,7 +35,7 @@
 }
 .ckgz {
   width: 152rpx;
-  height: 214rpx;
+  height: 314rpx;
   top: 500rpx;
   right: 20rpx;
 }
@@ -48,8 +48,30 @@
 .ckgz .img,
 .phb .img {
   width: 100%;
+  height: 271rpx;
 }
-
+.ckgz .img,
+.ckgz .btn {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 214rpx;
+}
+.ckgz .cj {
+  top: 180rpx;
+  height: 136rpx;
+}
+.ckgz .lbtn {
+  position: absolute;
+  height: 70rpx;
+  width: 100%;
+}
+.ckgz .sRuleBtn {
+  top: 85rpx;
+}
+.ckgz .ckRBtn {
+  top: 178rpx;
+}
 
 .mask {
   position: fixed;
