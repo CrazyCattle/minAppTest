@@ -135,10 +135,18 @@ Page({
       clearTimeout(this.timer)
     }, 500)
   }, 
-  viewTheCouplet (e) {
-    console.log(e.target.dataset.id)
+  viewDL () {
     wx.navigateTo({
-      url: `../test/test?openid=${e.target.dataset.id}`
+      url: '../dl/dl',
+      success: function(res){
+        console.log(res)
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
     })
   },
   /**

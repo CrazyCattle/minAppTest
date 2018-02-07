@@ -5,7 +5,8 @@
     "pages/hb/hb",
     "pages/start/start",
     "pages/phb/phb",
-    "pages/ckcj/ckcj"
+    "pages/cj/cj",
+    "pages/dl/dl"
   ],
   "window": {
     "backgroundTextStyle": "light",

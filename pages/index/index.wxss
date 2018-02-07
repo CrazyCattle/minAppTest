@@ -132,7 +132,7 @@
   width: 10rpx;
   height: 10rpx;
   left: -20rpx;
-  top: 70rpx;
+  top: 60rpx;
   border-radius: 50%;
   background-color: #ffd7a4;
 }

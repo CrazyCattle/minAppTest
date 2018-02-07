@@ -37,7 +37,7 @@
               </view>
             </view>
           </view>
-          <view class="row_rt" data-id="{{ item.openid }}" bindtap="viewTheCouplet">查看对联</view>
+          <view class="row_rt" data-id="{{ item.openid }}" bindtap="viewDL">查看对联</view>
         </view>
       </view>
     </view>

@@ -22,6 +22,12 @@ Page({
       showRuleMask: !this.data.showRuleMask
     })
   },
+  viewTheCouplet (e) {
+    console.log(e.target.dataset.id)
+    wx.navigateTo({
+      url: `../cj/cj?openid=${e.target.dataset.id}`
+    })
+  },
   //事件处理函数
   bindViewTap: function () {
     wx.navigateTo({

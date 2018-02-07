@@ -1,4 +1,4 @@
-// pages/ckcj/ckcj.js
+// pages/dl/dl.js
 Page({
 
   /**

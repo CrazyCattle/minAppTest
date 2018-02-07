@@ -103,7 +103,7 @@
   color: #dc000f;
   font-size: 28rpx;
   border-radius: 5rpx;
-  border: 1rpx solid #dc000f;
+  border: 1px solid #dc000f;
 }
 .phb_list .row_lf .img {
   display: inline-block;
