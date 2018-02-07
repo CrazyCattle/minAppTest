@@ -1,0 +1,23 @@
+<view class="ckeckCJ">
+  <image class="img" src="../../images/check/ckcj.jpg"></image>
+
+  <view class="tips-box">
+    <view class="t-tips tips_1" wx:if="{{ test }}">
+      <text class="tit">恭喜你！</text>
+      <text class="tit">你已成功挤进百名榜</text>
+      <text class="des">截图保存当前页面，长按二维码关注墨狐搜公众号</text>
+      <text class="des">中奖界面截图发至墨狐搜后台即可领取现金红包。</text>
+    </view>
+    <view class="t-tips tips_2" wx:if="{{ !test }}">
+      <text class="tit">恭喜你！</text>
+      <text class="tit">你没有挤进百名榜~~</text>
+      <text class="tit">在这先给你拜个早年！</text>
+    </view>
+    <image class="ewm" src="../../images/ewm.png"></image>
+  </view>
+
+  <view class="re-start" bindtap="replay">
+    <image class="img" src="../../images/restart.png"></image>
+    重新开始
+  </view>
+</view>

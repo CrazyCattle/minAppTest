@@ -1,0 +1,31 @@
+<!--pages/dl/dl.wxml-->
+<view class="dl_box">
+  <image class="img" src="../../images/dl/view_BG.jpg"></image>
+
+  <view class="dl_cont">
+    <image class="dl" src="../../images/dl/dl_2.png"></image>
+  </view>
+
+  <view class="b_cont">
+    <image class="ewm" src="../../images/dl/ewm.png" ></image>
+    <view class="t_pic_box t_pic_2">
+      <image class="t_pic" src="../../images/dl/dl_2_t.png"></image>
+    </view>
+  </view>
+
+  <view class="b_btn">
+    <view class="btn">
+      <image class="img" src="../../images/dl/bn.png"></image>
+      <button class="btn regame" type="default" bindtap="bn">拜个年</button>
+    </view>
+  </view>
+  <view class="view_list">
+    <image class="pic_img" src="../../images/o_u_pic.png"></image>
+    <image class="pic_img" src="../../images/o_u_pic.png"></image>
+    <image class="pic_img" src="../../images/o_u_pic.png"></image>
+    <image class="pic_img" src="../../images/o_u_pic.png"></image>
+    <image class="pic_img" src="../../images/o_u_pic.png"></image>
+    <image class="pic_img" src="../../images/o_u_pic.png"></image>
+  </view>
+</view>
+ 

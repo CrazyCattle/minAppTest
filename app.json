@@ -1,12 +1,11 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/test/test",
-    "pages/hb/hb",
-    "pages/start/start",
+    "pages/dati/dati",
     "pages/phb/phb",
-    "pages/cj/cj",
-    "pages/dl/dl"
+    "pages/choujiang/cj",
+    "pages/duilian/dl",
+    "pages/view/view"
   ],
   "window": {
     "backgroundTextStyle": "light",

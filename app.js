@@ -3,6 +3,7 @@ App({
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
+    var self = this
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
@@ -14,24 +15,32 @@ App({
     new Promise((resolve, reject)=> {
       wx.login({
         success: res => {
+          console.log(res)
           resolve(res)
         }
       })
     }).then((res) => {
       // 获取 openid 以及 session_key
       wx.request({
-        url: `https://api.weixin.qq.com/sns/jscode2session?appid=wx2456cc76cdec8d8e&secret=f464b012b6cf442dc3c79d31e3b256c5&js_code=${res.code}&grant_type=authorization_code`,
-        success: res => {
-          console.log(res)
-          if (res.errMsg == 'request:ok') {
-            // openid session_key expires_in
-            const { openid, session_key, expires_in } = res.data
-            console.log(openid, session_key, expires_in)
-          }
+        url: `https://www.mohuso.com/port/wxAuthorization?code=${res.code}`,
+        method: 'GET',
+        success: (res) => {
+          console.log(res.data)
+          if (res.error == '0') {
+            const { openid } = res.data.result
+            console.log(self.globalData.openid)
+            self.globalData.openid = openid
+          } 
+        },
+        fail: function() {
+          // fail
+        },
+        complete: function() {
+          // complete
         }
       })
     })
-    
+
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -42,7 +51,8 @@ App({
               console.log(res)
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
-
+              this.globalData.nickname = res.userInfo.nickName
+              this.globalData.avatar = res.userInfo.avatarUrl
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
               if (this.userInfoReadyCallback) {
@@ -55,6 +65,9 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    nickname: '',
+    openid: '11',
+    avatar: ''
   }
 })

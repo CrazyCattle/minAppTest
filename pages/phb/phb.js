@@ -137,7 +137,7 @@ Page({
   }, 
   viewDL () {
     wx.navigateTo({
-      url: '../dl/dl',
+      url: '../view/view?openid=1111111',
       success: function(res){
         console.log(res)
       },

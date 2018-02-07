@@ -1,0 +1,139 @@
+/* pages/dl/dl.wxss */
+.dl_box {
+  width: 750rpx;
+  height: 1270rpx;
+  padding-top: 108rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+.dl_box .img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.dl_box .dl_cont {
+  width: 658rpx;
+  height: 700rpx;
+  margin: 0 auto;
+  position: relative;
+}
+.dl_box .dl_cont .dl {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.b_cont {
+  display: flex;
+  height: 100rpx;
+  width: 580rpx;
+  margin: 30rpx auto 0;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.b_cont .ewm {
+  width: 90rpx;
+  height: 90rpx;
+}
+.b_cont .t_pic_box {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.b_cont .t_pic_1 .t_pic {
+  width: 321rpx;
+  height: 35rpx;
+}
+.b_cont .t_pic_2 .t_pic {
+  width: 358rpx;
+  height: 85rpx;
+}
+.b_cont .t_pic_3 .t_pic {
+  width: 289rpx;
+  height: 96rpx;
+}
+.b_cont .t_pic_4 .t_pic {
+  width: 245rpx;
+  height: 35rpx;
+}
+.b_cont .t_pic_5 .t_pic {
+  width: 455rpx;
+  height: 46rpx;
+}
+.b_cont .t_pic_6 .t_pic {
+  width: 467rpx;
+  height: 35rpx;
+}
+.b_cont .t_pic_7 .t_pic {
+  width: 435rpx;
+  height: 37rpx;
+}
+.b_cont .t_pic_8 .t_pic {
+  width: 332rpx;
+  height: 37rpx;
+}
+.b_cont .t_pic_9 .t_pic {
+  width: 277rpx;
+  height: 87rpx;
+}
+.b_cont .t_pic_10 .t_pic {
+  width: 185rpx;
+  height: 35rpx;
+}
+.b_cont .t_pic_11 .t_pic {
+  width: 466rpx;
+  height: 85rpx;
+}
+
+
+.b_btn {
+  width: 501rpx;
+  margin: 120rpx auto 30rpx;
+  display: flex;
+  justify-content: space-around;
+  z-index: 1;
+}
+.b_btn .btn {
+  width: 100%;
+  height: 82rpx;
+  line-height: 82rpx;
+  border-radius: 41rpx;
+  font-size: 36rpx;
+  color: #730c15;
+  background-color: transparent;
+  position: relative;
+}
+.b_btn .btn .img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.b_btn .btn::after {
+  border: none;
+}
+
+.view_list {
+  width: 501rpx;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+.view_list .pic_img {
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 15rpx;
+  border-radius: 50%;
+}
+.view_list .pic_img:last-child {
+  margin-right: 0;
+}
