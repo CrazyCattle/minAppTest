@@ -1,6 +1,0 @@
-<view class="hb-start">
-  <image class="img" src="../../images/hb/index.jpg"></image>
-  <view class="btn" bindtap="start">
-    <image class="img" src="../../images/hb/btn.png"></image>
-  </view>
-</view>

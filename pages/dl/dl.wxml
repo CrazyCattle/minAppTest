@@ -1,4 +1,0 @@
-<!--pages/dl/dl.wxml-->
-<view class="dl_box">
-  <image class="img" src="../../images/dl/dl_BG.jpg"></image>
-</view>
