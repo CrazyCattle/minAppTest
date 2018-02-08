@@ -11,7 +11,9 @@ Page({
     bnShow: false
   },
   regame() {
-    console.log("regame");
+    wx.navigateTo({
+      url: '../dati/dati'
+    })
   },
   /**
    * 生命周期函数--监听页面加载
@@ -75,11 +77,9 @@ Page({
     console.log(options);
     return {
       from: "button",
-      title:
-        "狗年到！不捡副对联回去，咋知道你是“剩斗士”还是撒狗粮，越冬，越要燃，快来测一测！",
-      path: `/pages/view/view?from_id=${this.data.sharer_id}&dooruser=${
-        this.data.dooruser
-      }`,
+      title: "狗年到！不捡副对联回去，咋知道你是“剩斗士”还是撒狗粮，越冬，越要燃，快来测一测！",
+      // path: `/pages/view/view?from_id=${this.data.sharer_id}&dooruser=${this.data.dooruser}`,
+      path: `/pages/index/index?from_id=${this.data.sharer_id}`,
       success: function(res) {
         console.log("转发成功");
       },

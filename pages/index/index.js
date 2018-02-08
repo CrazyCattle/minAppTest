@@ -85,13 +85,15 @@ Page({
   },
   onLoad: function(options) {
     const self = this;
-    if (!!options.id) {
-      console.log("我从分享那里来....---------" + options.id);
+    if (!!options.from_id) {
+      console.log("我从分享那里来....---------" + options.from_id);
       this.setData({
-        from_id: options.id
+        from_id: options.from_id
       });
     }
-
+    
+    console.log(this.data.from_id)
+    
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -164,19 +166,19 @@ Page({
       console.log(e, "拒绝时接受到的数据");
     }
   },
-  onShareAppMessage: function(options) {
-    console.log(options);
-    return {
-      from: "menu",
-      title:
-        "狗年到！不捡副对联回去，咋知道你是“剩斗士”还是撒狗粮，越冬，越要燃，快来测一测！",
-      path: `/pages/index/index?id=${app.globalData.openid}`,
-      success: function(res) {
-        console.log("转发成功");
-      },
-      fail: function(res) {
-        console.log("转发失败");
-      }
-    };
-  }
+  // onShareAppMessage: function(options) {
+  //   console.log(options);
+  //   return {
+  //     from: "menu",
+  //     title:
+  //       "狗年到！不捡副对联回去，咋知道你是“剩斗士”还是撒狗粮，越冬，越要燃，快来测一测！",
+  //     path: `/pages/index/index?id=${app.globalData.openid}`,
+  //     success: function(res) {
+  //       console.log("转发成功");
+  //     },
+  //     fail: function(res) {
+  //       console.log("转发失败");
+  //     }
+  //   };
+  // }
 });
