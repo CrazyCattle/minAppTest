@@ -1,49 +1,47 @@
 // pages/view/view.js
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
     dl_id: undefined
   },
-  bn () {
-    console.log('拜年了！！！！')
+  bn() {
+    console.log("拜年了！！！！");
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    this.setData({
-      dl_id: options.dooruser
-    })
+  onLoad: function(options) {
+    console.log("拜年了！！！！");
+    if (options.dooruser) {
+      this.setData({
+        dl_id: options.dooruser
+      });
+    }
+
+    if (!!options.from_id) {
+      console.log(options.from_id);
+    }
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-  
-  },
+  onReady: function() {},
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-  
-  },
+  onShow: function() {},
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-  
-  },
+  onHide: function() {},
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-  
-  }
-})
+  onUnload: function() {}
+});

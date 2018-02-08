@@ -3,10 +3,10 @@
 
   <view class="hbQuest {{i == curShow?'':'none'}}" wx:for="{{ question }}" wx:for-index="i" wx:for-item="item" wx:key="key">
     <view class="QTitle"> 
-      {{ i }}、{{ item.title }}
+      {{ item.id }}、{{ item.postname }}
     </view>
     <view class="QAnswer">
-      <view class="QRow {{ tap && temp == index ?'active':''}}"  bindtap="tapAnswer" wx:for="{{ item.a }}" wx:for-index="index" wx:for-item="a" wx:key="key" data-key="{{index}}">{{ a.s }}</view>
+      <view class="QRow {{ tap && temp == index ?'active':''}}" data-ques="Question-{{ item.id }}" data-bias="{{ answer.bias }}" bindtap="tapAnswer" wx:for="{{ item.answer }}" wx:for-index="index" wx:for-item="answer" wx:key="key" data-key="{{index}}">{{ answer.content }}</view>
     </view>
   </view>
 

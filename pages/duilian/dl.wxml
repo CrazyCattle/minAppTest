@@ -3,13 +3,13 @@
   <image class="img" src="../../images/dl/dl_BG.jpg"></image>
 
   <view class="dl_cont">
-    <image class="dl" src="../../images/dl/dl_2.png"></image>
+    <image class="dl" src="../../images/dl/dl_{{ dooruser }}.png"></image>
   </view>
 
   <view class="b_cont">
     <image class="ewm" src="../../images/dl/ewm.png" ></image>
-    <view class="t_pic_box t_pic_2">
-      <image class="t_pic" src="../../images/dl/dl_2_t.png"></image>
+    <view class="t_pic_box t_pic_{{ dooruser }}">
+      <image class="t_pic" src="../../images/dl/dl_{{ dooruser }}_t.png"></image>
     </view>
   </view>
 
@@ -21,7 +21,7 @@
     
     <view class="btn">
       <image class="img" src="../../images/dl/share.png"></image>
-      <button class="btn share" type="default" bindtap="share">立即分享</button>
+      <button class="btn share" open-type="share">立即分享</button>
     </view>
   </view>
 </view>

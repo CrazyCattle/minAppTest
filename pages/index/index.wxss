@@ -122,8 +122,8 @@
   left: 0;
 }
 .rule_box .row {
-  padding-top: 40rpx;
-  line-height: 50rpx; 
+  padding-top: 30rpx;
+  line-height: 45rpx; 
   color: #fff;
   font-size: 28rpx;
   z-index: 300;
@@ -135,7 +135,7 @@
   width: 10rpx;
   height: 10rpx;
   left: -20rpx;
-  top: 60rpx;
+  top: 48rpx;
   border-radius: 50%;
   background-color: #ffd7a4;
 }

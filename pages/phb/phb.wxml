@@ -7,7 +7,7 @@
     <view class="icon_box tc">
       <view class="bns">
         拜年数：
-        <text class="number">10个</text>
+        <text class="number">{{ aboutUser.happyyear }}个</text>
       </view>
     </view>
 

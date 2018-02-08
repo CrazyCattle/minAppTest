@@ -1,121 +1,131 @@
+const app = getApp();
+
 Page({
   data: {
     curShow: 0,
     temp: undefined,
     tap: false,
     timer: null,
-    randowQ: [],
-    question: [
-      {
-        title: `春节是中国的传统节日，是热闹的
-      一天，也是喜庆的日子。在春节里
-      做什么对你来说是最有意义的呢？`,
-        a: [
-          { s: '讨红包' },
-          { s: '团圆饭' },
-          { s: '贴春联' },
-          { s: '拜年' }
-        ]
-      },
-      {
-        title: `你认为过年放鞭炮是为了什么？`,
-        a: [
-          { s: '热闹' },
-          { s: '图个吉利 ' },
-          { s: '好玩' }
-        ]
-      },
-      {
-        title: `你对于贴春联有什么看法？`,
-        a: [
-          { s: '无所谓，可贴可不贴' },
-          { s: '认为没必要' },
-          { s: '非常重视 一定要贴' }
-        ]
-      },
-      {
-        title: `春节聚会中你最不愿意谈论的话题是`,
-        a: [
-          { s: '自己/孩子工作情况或学习情况' },
-          { s: '个人问题（如联系/结婚/生子）' },
-          { s: '收入问题或升职问题' }
-        ]
-      }
-    ]
+    dooruser: undefined,
+    ans: {
+      "Question-1": 0,
+      "Question-2": 0,
+      "Question-3": 0,
+      "Question-4": 0,
+      "Question-5": 0
+    },
+    question: []
   },
 
   tapAnswer(e) {
-    console.log(this.data.question.length)
-    
-    console.log(e.currentTarget.dataset.key)
+    // console.log(this.data.question.length)
+    // console.log(e.currentTarget.dataset.key)
     this.setData({
       tap: true,
       temp: e.currentTarget.dataset.key
-    })
+    });
+    this.data.ans[e.currentTarget.dataset.ques] = e.currentTarget.dataset.bias;
 
-    if (this.data.curShow < this.data.question.length-1) {
+    if (this.data.curShow < this.data.question.length - 1) {
       this.timer = setTimeout(() => {
         this.setData({
           curShow: ++this.data.curShow,
           tap: false
-        })
-        clearTimeout(this.timer)
-      }, 300)
-
+        });
+        clearTimeout(this.timer);
+      }, 300);
     } else {
-      wx.navigateTo({
-        url: '../duilian/dl?openid=23214214',
-        success: function(res){
-          console.log('答完了！！')
+      let QArr = [];
+      let newArr = new Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+      for (let key in this.data.ans) {
+        QArr.push(this.data.ans[key]);
+        var num = parseInt(this.data.ans[key]);
+        newArr[num]++;
+      }
+      console.log(QArr, newArr);
+      if (Math.max.apply(Math, newArr) == 1) {
+        this.setData({
+          dooruser: QArr[Math.floor(Math.random() * 5)]
+        });
+      } else {
+        let maxNumber = Math.max.apply(Math, newArr);
+        this.setData({
+          dooruser: newArr.indexOf(maxNumber)
+        });
+      }
+
+      wx.request({
+        url: `https://www.mohuso.com/port/doorUser?wxtoken=${
+          app.globalData.openid
+        }&dooruser=${this.data.dooruser}`,
+        method: "GET", // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+        // header: {}, // 设置请求的 header
+        success: res => {
+          if (res.data.error == "0") {
+            wx.navigateTo({
+              url: `../duilian/dl?openid=${app.globalData.openid}&dooruser=${
+                this.data.dooruser
+              }`
+            });
+          }
         },
-        fail: function() {
-          // fail
+        fail: err => {
+          throw Error(err);
         },
-        complete: function() {
-          // complete
+        complete: res => {
+          console.log("完成了");
         }
-      })
+      });
     }
-    console.log(this.data.curShow)
+    // console.log(this.data.curShow);
   },
-  replay () {
+  replay() {
     this.setData({
       curShow: 0
-    })
-    console.log(this.curShow)
+    });
+    console.log(this.curShow);
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
+  onLoad: function(options) {
+    wx.request({
+      url: "https://www.mohuso.com/port/getProblem",
+      method: "GET",
+      success: res => {
+        console.log(res);
+        if (res.data.error == "1") {
+          this.setData({
+            question: res.data.result
+          });
+        }
+      },
+      fail: err => {
+        throw Error(err);
+      },
+      complete: res => {
+        console.log("completed");
+      }
+    });
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-
-  },
+  onReady: function() {},
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-
-  },
+  onShow: function() {},
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-
-  },
+  onHide: function() {},
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-
-  }
-})
+  onUnload: function() {}
+});
