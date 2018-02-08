@@ -44,6 +44,8 @@
   height: 271rpx;
   top: 470rpx;
   left: 15rpx;
+  padding: 0;
+  background-color: transparent;
 }
 .ckgz .img,
 .phb .img {
@@ -71,6 +73,7 @@
 }
 .ckgz .ckRBtn {
   top: 178rpx;
+  background-color: transparent;
 }
 
 .mask {
@@ -147,6 +150,8 @@
   background-color: transparent;
   border: none;
 }
+.phb::after,
+.ckgz .ckRBtn::after,
 .valiInfor::after {
   border: none;
 }

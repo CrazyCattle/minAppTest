@@ -7,16 +7,16 @@
     <image class="img" src="../../images/index/ckgz.png"></image>
     <image class="img cj" src="../../images/index/cj.png"></image>
     <view class="lbtn sRuleBtn" bindtap="sRule"></view>
-    <view class="lbtn ckRBtn" bindtap="viewTheCouplet"></view>
+    <button class="lbtn ckRBtn" open-type="getUserInfo" id="ckZJ" bindgetuserinfo="getUserInfo"></button>
   </view>
-  <view class="phb" bindtap="gotophb">
+  <button class="phb" id="phb" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
     <image class="img" src="../../images/index/phb.png"></image>
-  </view>
+  </button>
    <!-- open-type="getUserInfo" bindgetuserinfo="getUserInfo" -->
   <!-- <view class="btn" bindtap="start"> -->
   <view class="btn">
     <image class="img" src="../../images/hb/btn.png"></image>
-    <button class="valiInfor" open-type="getUserInfo" bindgetuserinfo="getUserInfo"></button>
+    <button class="valiInfor" id="start" open-type="getUserInfo" bindgetuserinfo="getUserInfo"></button>
   </view>
 
   <view class="mask {{showRuleMask?'':'none'}}"></view>

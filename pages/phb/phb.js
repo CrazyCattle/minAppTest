@@ -10,113 +10,8 @@ Page({
     timer: null,
     showLoading: false,
     scrollTop: 0,
-    mockData: [
-      {
-        mc: 7,
-        pic_url: '../../images/o_u_pic.png',
-        bns: 50,
-        name: 'Mr.wu',
-        openid: '1'
-      },
-      {
-        mc: 7,
-        pic_url: '../../images/o_u_pic.png',
-        bns: 50,
-        name: '中文测试',
-        openid: '2'
-      },
-      {
-        mc: 7,
-        pic_url: '../../images/o_u_pic.png',
-        bns: 50,
-        name: '12丶3',
-        openid: '3'
-      }, {
-        mc: 7,
-        pic_url: '../../images/o_u_pic.png',
-        bns: 50,
-        name: 'this is test',
-        openid: '4'
-      },
-      {
-        mc: 7,
-        pic_url: '../../images/o_u_pic.png',
-        bns: 50,
-        name: 'this is test',
-        openid: '5'
-      }
-    ],
-    phb: [
-      {
-        mc: 1,
-        pic_url: '../../images/o_u_pic.png',
-        bns: 50,
-        name: 'Mr.wu',
-        openid: '6'
-      },
-      {
-        mc: 2,
-        pic_url: '../../images/o_u_pic.png',
-        bns: 45,
-        name: '中文测试',
-        openid: '7'
-      },
-      {
-        mc: 3,
-        pic_url: '../../images/o_u_pic.png',
-        bns: 30,
-        name: '哈123丶123哈',
-        openid: '8'
-      },
-      {
-        mc: 4,
-        pic_url: '../../images/o_u_pic.png',
-        bns: 10,
-        name: 'this is test',
-        openid: '9'
-      },
-      {
-        mc: 5,
-        pic_url: '../../images/o_u_pic.png',
-        bns: 5,
-        name: 'this is test',
-        openid: '10',
-      }, {
-        mc: 1,
-        pic_url: '../../images/o_u_pic.png',
-        bns: 50,
-        name: 'Mr.wu',
-        openid: '6'
-      },
-      {
-        mc: 2,
-        pic_url: '../../images/o_u_pic.png',
-        bns: 45,
-        name: '中文测试',
-        openid: '7'
-      },
-      {
-        mc: 3,
-        pic_url: '../../images/o_u_pic.png',
-        bns: 30,
-        name: '哈123丶123哈',
-        openid: '8'
-      },
-      {
-        mc: 4,
-        pic_url: '../../images/o_u_pic.png',
-        bns: 10,
-        name: 'this is test',
-        openid: '9'
-      },
-      {
-        mc: 5,
-        pic_url: '../../images/o_u_pic.png',
-        bns: 5,
-        name: 'this is test',
-        openid: '10',
-      }
-    ]
+    aboutUser: {},
+    phb: []
   },
   lower () {
     // 排行榜 无限加载
@@ -135,32 +30,42 @@ Page({
       clearTimeout(this.timer)
     }, 500)
   }, 
-  viewDL () {
+  viewDL (e) {
     wx.navigateTo({
-      url: '../view/view?openid=1111111',
-      success: function(res){
-        console.log(res)
-      },
-      fail: function() {
-        // fail
-      },
-      complete: function() {
-        // complete
-      }
+      url: `../view/view?dooruser=${e.currentTarget.dataset.id}`
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    console.log(options.openid)
+    wx.request({
+      url: `https://www.mohuso.com/port/yearUserFriends?wxtoken=${options.openid}`,
+      method: 'GET',
+      success: (res) => {
+        console.log(res)
+        this.setData({
+          phb: res.data.result
+        })
+      },
+      fail: function(err) {
+        throw Error(err)
+      },
+      complete: function(res) {
+        console.log(res)
+      }
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    console.log(app.globalData)
+    console.log(app.aboutUser)
+    this.setData({
+      aboutUser: app.aboutUser
+    })
   },
 
   /**
@@ -195,13 +100,6 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
   
   }
 })

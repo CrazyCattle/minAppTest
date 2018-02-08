@@ -25,11 +25,10 @@ App({
         url: `https://www.mohuso.com/port/wxAuthorization?code=${res.code}`,
         method: 'GET',
         success: (res) => {
-          console.log(res.data)
-          if (res.error == '0') {
-            const { openid } = res.data.result
+          // console.log(res.data, res.data.error, res.data.result.openid)
+          if (res.data.error == '0') {
+            self.globalData.openid = res.data.result.openid
             console.log(self.globalData.openid)
-            self.globalData.openid = openid
           } 
         },
         fail: function() {
@@ -67,7 +66,8 @@ App({
   globalData: {
     userInfo: null,
     nickname: '',
-    openid: '11',
-    avatar: ''
+    openid: '',
+    avatar: '',
+    aboutUser: {}
   }
 })

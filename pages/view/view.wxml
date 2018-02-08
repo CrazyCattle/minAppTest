@@ -3,13 +3,13 @@
   <image class="img" src="../../images/dl/view_BG.jpg"></image>
 
   <view class="dl_cont">
-    <image class="dl" src="../../images/dl/dl_2.png"></image>
+    <image class="dl" src="../../images/dl/dl_{{dl_id}}.png"></image>
   </view>
 
   <view class="b_cont">
     <image class="ewm" src="../../images/dl/ewm.png" ></image>
-    <view class="t_pic_box t_pic_2">
-      <image class="t_pic" src="../../images/dl/dl_2_t.png"></image>
+    <view class="t_pic_box t_pic_{{dl_id}}">
+      <image class="t_pic" src="../../images/dl/dl_{{dl_id}}_t.png"></image>
     </view>
   </view>
 

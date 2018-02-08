@@ -115,7 +115,7 @@
   height: 80rpx;
   line-height: 100%;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   padding-left: 15rpx;
   color: #b2111c;
   font-size: 26rpx;

@@ -94,7 +94,7 @@
 
 .b_btn {
   width: 501rpx;
-  margin: 120rpx auto 30rpx;
+  margin: 100rpx auto 30rpx;
   display: flex;
   justify-content: space-around;
   z-index: 1;

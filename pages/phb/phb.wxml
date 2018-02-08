@@ -2,8 +2,8 @@
   <image class="img" src="../../images/dz_BG.jpg"></image>
 
   <scroll-view scroll-y class="scrollViewBox" style="height: 100%;" bindscrolltolower="lower" scroll-top="{{scrollTop}}">
-    <image class="user_pic" src="../../images/user_pic.png"></image>
-    <view class="user_name tc">lover  (系统排名第3名)</view>
+    <image class="user_pic" src="{{ aboutUser.avatar }}"></image>
+    <view class="user_name tc">{{ aboutUser.nickname }}  (系统排名第{{ aboutUser.ranking }}名)</view>
     <view class="icon_box tc">
       <view class="bns">
         拜年数：
@@ -13,31 +13,18 @@
 
     <view class="phb_list">
       <view class="row" wx:for="{{ phb }}" wx:for-index="index" wx:key="key" wx:for-item="item">
-        <!--<view wx:if="{{ item.mc == 1 }}" class="pm">
-          <image src="../../images/num_1.png" class="img"></image>
-        </view>
-        <view wx:elif="{{ item.mc == 2 }}" class="pm">
-          <image src="../../images/num_2.png" class="img"></image>
-        </view>
-        <view wx:elif="{{ item.mc == 3 }}" class="pm">
-          <image src="../../images/num_3.png" class="img"></image>
-        </view>
-        <view wx:else class="pm">
-          <text>{{ item.mc }}</text>
-        </view>-->
-
         <view class="content">
           <view class="row_lf">
-            <image class="img" src="{{ item.pic_url }}"></image>
+            <image class="img" src="{{ item.avatar }}"></image>
             <view class="text">
-              <view class="o_user_name">{{ item.name }}</view>
+              <view class="o_user_name">{{ item.nickname }}</view>
               <view>
                 <view class="bns_icon">拜年数</view>
-                <text class="t-bns">{{ item.bns }}个</text>
+                <text class="t-bns">{{ item.happyyear }}个</text>
               </view>
             </view>
           </view>
-          <view class="row_rt" data-id="{{ item.openid }}" bindtap="viewDL">查看对联</view>
+          <view class="row_rt" data-id="{{ item.dooruser }}" bindtap="viewDL">查看对联</view>
         </view>
       </view>
     </view>
