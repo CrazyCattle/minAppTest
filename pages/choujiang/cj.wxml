@@ -5,8 +5,8 @@
     <view class="t-tips tips_1" wx:if="{{ ranking <= 100 }}">
       <text class="tit">恭喜你！</text>
       <text class="tit">你已成功挤进百名榜</text>
-      <text class="des">截图保存当前页面，长按二维码关注墨狐搜公众号</text>
-      <text class="des">中奖界面截图发至墨狐搜后台即可领取现金红包。</text>
+      <text class="des">当前页面截图保存，然后长按截图识别二维码</text>
+      <text class="des">关注墨狐搜公众号，在后台发送消息领取现金红包</text>
     </view>
     <view class="t-tips tips_2" wx:if="{{ ranking > 100 }}">
       <text class="tit">恭喜你！</text>

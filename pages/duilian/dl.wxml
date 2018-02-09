@@ -3,12 +3,12 @@
   <image class="img" src="../../images/dl/dl_BG.jpg"></image>
 
   <view class="dl_cont">
-    <image class="dl" src="../../images/dl/dl_{{ dooruser }}.png"></image>
+    <image wx:if="{{ !!dooruser }}" class="dl" src="../../images/dl/dl_{{ dooruser }}.png"></image>
   </view>
 
   <view class="b_cont">
     <image class="ewm" src="../../images/dl/ewm.png" ></image>
-    <view class="t_pic_box t_pic_{{ dooruser }}">
+    <view wx:if="{{ !!dooruser }}" class="t_pic_box t_pic_{{ dooruser }}">
       <image class="t_pic" src="../../images/dl/dl_{{ dooruser }}_t.png"></image>
     </view>
   </view>
@@ -16,7 +16,8 @@
   <view class="b_btn">
     <view class="btn">
       <image class="img" src="../../images/dl/regame.png"></image>
-      <button class="btn regame" type="default" bindtap="regame">重新游戏</button>
+      <!--<button class="btn regame" type="default" bindtap="regame">保存图片</button>-->
+      <button class="btn regame" type="default" bindtap="saveImgToPhotosAlbumTap">保存图片</button>
     </view>
     
     <view class="btn">

@@ -80,10 +80,13 @@ Page({
     // console.log(this.data.curShow);
   },
   replay() {
-    this.setData({
-      curShow: 0
-    });
-    console.log(this.curShow);
+    // this.setData({
+    //   curShow: 0
+    // });
+    // console.log(this.curShow);
+    wx.navigateTo({
+      url: '../index/index'
+    })
   },
   /**
    * 生命周期函数--监听页面加载

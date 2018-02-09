@@ -15,6 +15,35 @@ Page({
       url: '../dati/dati'
     })
   },
+  // 保存图片
+  saveImgToPhotosAlbumTap() {
+    console.log(`https://static.mohuso.com/share/dooryear${this.data.dooruser}.jpg`)
+    wx.downloadFile({  
+      url: `https://static.mohuso.com/share/dooryear${this.data.dooruser}.jpg`,  
+      success: (res) => {  
+        console.log(res)  
+        wx.saveImageToPhotosAlbum({  
+          filePath: res.tempFilePath,  
+          success: (res) => {  
+            console.log(res) 
+            if (res.errMsg == 'saveImageToPhotosAlbum:ok') {
+              wx.showToast({
+                title: '保存成功',
+                icon: 'success',
+                duration: 1500
+              })
+            } 
+          },  
+          fail: (res) => {  
+            throw Error(res) 
+          }  
+        })  
+      },  
+      fail: () => {  
+        console.log('fail')
+      }  
+    })  
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -38,6 +67,19 @@ Page({
         dooruser: options.dooruser
       });
     }
+    wx.request({
+      url: `https://www.mohuso.com/port/yearGetUser?wxtoken=${app.globalData.openid}`,
+      method: 'GET',
+      success: (res) => {
+        app.aboutUser = res.data.result
+      },
+      fail: (res) => {
+        throw Error(res)
+      },
+      complete: (res) => {
+        console.log(res)
+      }
+    })
   },
 
   /**
@@ -77,14 +119,19 @@ Page({
     console.log(options);
     return {
       from: "button",
-      title: "狗年到！不捡副对联回去，咋知道你是“剩斗士”还是撒狗粮，越冬，越要燃，快来测一测！",
+      title: "狗年好运到，捡副对联让好友拜年，墨狐搜给你发红包！",
       // path: `/pages/view/view?from_id=${this.data.sharer_id}&dooruser=${this.data.dooruser}`,
       path: `/pages/index/index?from_id=${this.data.sharer_id}`,
       success: function(res) {
-        console.log("转发成功");
+        // console.log("转发成功");
+        wx.showToast({
+          title: '转发成功',
+          icon: 'success',
+          duration: 1500
+        })
       },
       fail: function(res) {
-        console.log("转发失败");
+       throw Error(res);
       }
     };
   }

@@ -3,12 +3,12 @@
   <image class="img" src="../../images/dl/view_BG.jpg"></image>
 
   <view class="dl_cont">
-    <image class="dl" src="../../images/dl/dl_{{dl_id}}.png"></image>
+    <image wx:if="{{ !!dl_id }}" class="dl" src="../../images/dl/dl_{{dl_id}}.png"></image>
   </view>
 
   <view class="b_cont">
     <image class="ewm" src="../../images/dl/ewm.png" ></image>
-    <view class="t_pic_box t_pic_{{dl_id}}">
+    <view wx:if="{{ !!dl_id }}" class="t_pic_box t_pic_{{dl_id}}">
       <image class="t_pic" src="../../images/dl/dl_{{dl_id}}_t.png"></image>
     </view>
   </view>
@@ -20,12 +20,7 @@
     </view>
   </view>
   <view class="view_list">
-    <image class="pic_img" src="../../images/o_u_pic.png"></image>
-    <image class="pic_img" src="../../images/o_u_pic.png"></image>
-    <image class="pic_img" src="../../images/o_u_pic.png"></image>
-    <image class="pic_img" src="../../images/o_u_pic.png"></image>
-    <image class="pic_img" src="../../images/o_u_pic.png"></image>
-    <image class="pic_img" src="../../images/o_u_pic.png"></image>
+    <image wx:for='{{ wishUserList }}' wx:if='{{ index < 6 }}' wx:for-index="index" wx:key="key" wx:for-item="item" class="pic_img" src="{{ item.avatar }}"></image>
   </view>
 </view>
  

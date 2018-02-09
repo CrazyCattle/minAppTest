@@ -24,7 +24,7 @@
               </view>
             </view>
           </view>
-          <view class="row_rt" data-id="{{ item.dooruser }}" bindtap="viewDL">查看对联</view>
+          <view class="row_rt" data-id="{{ item.dooruser }}" data-shareid="{{ item.sharer_id }}" bindtap="viewDL">查看对联</view>
         </view>
       </view>
     </view>

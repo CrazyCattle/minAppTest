@@ -1,12 +1,8 @@
 //app.js
 App({
   onLaunch: function() {
-    // 展示本地存储能力
-    var logs = wx.getStorageSync("logs") || [];
-    var self = this;
-    logs.unshift(Date.now());
-    wx.setStorageSync("logs", logs);
-
+    let self = this;
+    
     wx.showShareMenu({
       withShareTicket: true
     });
@@ -25,10 +21,13 @@ App({
         url: `https://www.mohuso.com/port/wxAuthorization?code=${res.code}`,
         method: "GET",
         success: res => {
+          console.log('dfjkasjfkd-------------', res)
           // console.log(res.data, res.data.error, res.data.result.openid)
           if (res.data.error == "0") {
-            self.globalData.openid = res.data.result.openid;
+            this.globalData.openid = res.data.result.openid;
             console.log(self.globalData.openid);
+            wx.setStorageSync("openid", this.globalData.openid);
+            console.log(wx.getStorageSync("openid"))
           }
         },
         fail: function() {
@@ -66,7 +65,7 @@ App({
   globalData: {
     userInfo: null,
     nickname: "",
-    openid: "",
+    openid: wx.getStorageSync("openid") || '',
     avatar: "",
     aboutUser: {}
   }

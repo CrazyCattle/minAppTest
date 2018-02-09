@@ -52,7 +52,7 @@
 .phb_list {
   box-sizing: border-box;
   width: 698rpx;
-  margin: auto;
+  margin: 0 auto 50rpx;
   padding: 0 40rpx;
   border-radius: 15rpx;
   background-color: #fff;

@@ -8,7 +8,9 @@ Page({
     hasUserInfo: false,
     originData: [],
     showRuleMask: false,
-    from_id: ""
+    from_id: "",
+    openid: wx.getStorageSync("openid"),
+    dooruser: 0
   },
   sRule() {
     this.setData({
@@ -16,12 +18,12 @@ Page({
     });
   },
   getUserInformation() {
+    console.log(`https://www.mohuso.com/port/judgeUser?wxtoken=${this.data.openid}`, '判断用户')
+    
     const self = this;
     new Promise((resolve, reject) => {
       wx.request({
-        url: `https://www.mohuso.com/port/judgeUser?wxtoken=${
-          app.globalData.openid
-        }`,
+        url: `https://www.mohuso.com/port/judgeUser?wxtoken=${this.data.openid}`,
         method: "GET",
         success: function(res) {
           resolve(res);
@@ -34,15 +36,15 @@ Page({
         }
       });
     }).then(res => {
+      console.log(`https://www.mohuso.com/port/yearAddUser?wxtoken=${this.data.openid}&nickname=${app.globalData.nickname}&avatar=${app.globalData.avatar}` +
+      `${!!self.data.from_id ? "&from_id=" + self.data.from_id : ""}`)
+      console.log(res.data.error)
       if (res.data.error == "1") {
+        console.log('我还没注册过')
         wx.request({
           url:
-            `https://www.mohuso.com/port/yearAddUser?wxtoken=${
-              app.globalData.openid
-            }&nickname=${app.globalData.nickname}&avatar=${
-              app.globalData.avatar
-            }` +
-            `${!!self.data.from_id ? "&from_id=" + self.data.from_id : ""}`,
+            `https://www.mohuso.com/port/yearAddUser?wxtoken=${this.data.openid}&nickname=${app.globalData.nickname}&avatar=${app.globalData.avatar}` +
+            `${self.data.from_id ? "&from_id=" + self.data.from_id : ""}`,
           method: "GET",
           success: function(res) {
             console.log(res);
@@ -55,14 +57,18 @@ Page({
           }
         });
       } else if (res.data.error == "0") {
+        console.log('我已经注册过')
         wx.request({
-          url: `https://www.mohuso.com/port/yearGetUser?wxtoken=${
-            app.globalData.openid
-          }`,
+          url: `https://www.mohuso.com/port/yearGetUser?wxtoken=${this.data.openid}`,
           method: "GET",
           success: function(res) {
-            app.aboutUser = res.data.result;
+            console.log(res)
             console.log(app.aboutUser);
+            app.aboutUser = res.data.result;
+            self.setData({
+              dooruser: app.aboutUser.dooruser
+            })
+            console.log(self.data.dooruser);
           },
           fail: function() {
             throw Error("获取用户数据错误~~");
@@ -84,6 +90,13 @@ Page({
     console.log("onUnload");
   },
   onLoad: function(options) {
+    console.log(this.data.openid, 'openid')
+    console.log('全局变量 ---------------', app)
+    if (app) {
+      console.log(1)
+    } else {
+      console.log(2)
+    }
     const self = this;
     if (!!options.from_id) {
       console.log("我从分享那里来....---------" + options.from_id);
@@ -92,13 +105,12 @@ Page({
       });
     }
     
-    console.log(this.data.from_id)
-    
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
       });
+      this.getUserInformation()
     } else {
       // 在没有 open-type=getUserInfo 版本的兼容处理
       new Promise((resolve, reject) => {
@@ -130,9 +142,7 @@ Page({
       });
 
       wx.request({
-        url: `https://www.mohuso.com/port/yearGetUser?wxtoken=${
-          app.globalData.openid
-        }`,
+        url: `https://www.mohuso.com/port/yearGetUser?wxtoken=${this.data.openid}`,
         method: "GET",
         success: function(res) {
           app.aboutUser = res.data.result;
@@ -155,30 +165,15 @@ Page({
 
       if (e.currentTarget.id == "start") {
         wx.navigateTo({
-          url: `../dati/dati?openid=${app.globalData.openid}`
+          url: `../dati/dati?openid=${this.data.openid}`
         });
       } else if (e.currentTarget.id == "phb") {
         wx.navigateTo({
-          url: `../phb/phb?openid=${app.globalData.openid}`
+          url: `../phb/phb?openid=${this.data.openid}`
         });
       }
     } else {
       console.log(e, "拒绝时接受到的数据");
     }
-  },
-  // onShareAppMessage: function(options) {
-  //   console.log(options);
-  //   return {
-  //     from: "menu",
-  //     title:
-  //       "狗年到！不捡副对联回去，咋知道你是“剩斗士”还是撒狗粮，越冬，越要燃，快来测一测！",
-  //     path: `/pages/index/index?id=${app.globalData.openid}`,
-  //     success: function(res) {
-  //       console.log("转发成功");
-  //     },
-  //     fail: function(res) {
-  //       console.log("转发失败");
-  //     }
-  //   };
-  // }
+  }
 });

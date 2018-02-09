@@ -5,9 +5,9 @@
 
   <view class="ckgz">
     <image class="img" src="../../images/index/ckgz.png"></image>
-    <image class="img cj" src="../../images/index/cj.png"></image>
+    <image wx:if="{{ dooruser > 0 }}"  class="img cj" src="../../images/index/cj.png"></image>
     <view class="lbtn sRuleBtn" bindtap="sRule"></view>
-    <button class="lbtn ckRBtn" open-type="getUserInfo" id="ckZJ" bindgetuserinfo="getUserInfo"></button>
+    <button wx:if="{{ dooruser > 0 }}"  class="lbtn ckRBtn" open-type="getUserInfo" id="ckZJ" bindgetuserinfo="getUserInfo"></button>
   </view>
   <button class="phb" id="phb" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
     <image class="img" src="../../images/index/phb.png"></image>
@@ -26,8 +26,7 @@
     </view>
     <view class="row">活动时间：2月10号-2月22号</view>  
     <view class="row">点击开始游戏，系统会随机抽5道题，根据给出的题目选择你心中理想的选项，没有时间限制，没有固定的选项。</view>
-    <view class="row">系统会根据你的选项赠送一副对联，将结果分享至好友或者微信群，通过你的分享点击进来的好友数排在前100名，即可获得系统送出的现金红包，最高388元。
-游戏规则调整了。</view>
+    <view class="row">系统会根据你的选项赠送一副对联，将结果分享至好友或者微信群，通过你的分享点击进来的好友数排在前100名，即可获得系统送出的现金红包，最高388元。</view>
     <image class="img" src="../../images/rule.png"></image>
   </view>
 </view>
