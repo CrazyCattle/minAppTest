@@ -2,42 +2,50 @@
 App({
   onLaunch: function() {
     let self = this;
-    
+
     wx.showShareMenu({
       withShareTicket: true
     });
 
-    // 登录
-    new Promise((resolve, reject) => {
-      wx.login({
-        success: res => {
-          console.log(res);
-          resolve(res);
-        }
-      });
-    }).then(res => {
-      // 获取 openid 以及 session_key
-      wx.request({
-        url: `https://www.mohuso.com/port/wxAuthorization?code=${res.code}`,
-        method: "GET",
-        success: res => {
-          console.log('dfjkasjfkd-------------', res)
-          // console.log(res.data, res.data.error, res.data.result.openid)
-          if (res.data.error == "0") {
-            this.globalData.openid = res.data.result.openid;
-            console.log(self.globalData.openid);
-            wx.setStorageSync("openid", this.globalData.openid);
-            console.log(wx.getStorageSync("openid"))
-          }
-        },
-        fail: function() {
-          // fail
-        },
-        complete: function() {
-          // complete
-        }
-      });
-    });
+    // // 登录
+    // new Promise((resolve, reject) => {
+    //   wx.login({
+    //     success: res => {
+    //       console.log(res);
+    //       resolve(res);
+    //     }
+    //   });
+    // }).then(res => {
+    //   // 获取 openid 以及 session_key
+    //   wx.request({
+    //     url: `https://www.mohuso.com/port/wxAuthorization?code=${res.code}`,
+    //     method: "GET",
+    //     success: res => {
+    //       console.log('dfjkasjfkd-------------', res)
+    //       // console.log(res.data, res.data.error, res.data.result.openid)
+    //       if (res.data.error == "0") {
+    //         this.globalData.openid = res.data.result.openid;
+    //         console.log(self.globalData.openid);
+    //         wx.setStorage({
+    //           "key": "openid",
+    //           "data": this.globalData.openid
+    //         });
+    //         wx.getStorage({
+    //           key:"openid",
+    //           success: (res) => {
+    //             console.log('异步', res)
+    //           }
+    //         })
+    //       }
+    //     },
+    //     fail: function() {
+    //       // fail
+    //     },
+    //     complete: function() {
+    //       // complete
+    //     }
+    //   });
+    // });
 
     // 获取用户信息
     wx.getSetting({
@@ -65,8 +73,14 @@ App({
   globalData: {
     userInfo: null,
     nickname: "",
-    openid: wx.getStorageSync("openid") || '',
+    openid: wx.getStorage({
+      "key":"openid",
+      success: (res) => {
+        return res
+      }
+    }) || '',
     avatar: "",
-    aboutUser: {}
+    aboutUser: {},
+    dooruser: ''
   }
 });

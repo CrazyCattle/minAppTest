@@ -1,8 +1,11 @@
 <!--index.wxml-->
 
 <view class="hb-start">
+  <view class="musice-icon {{ musicState?'active':''}}" bindtap="toggerMusic"> 
+    <image class="music" src="../../images/music.png"></image>
+  </view>
   <image class="img" src="../../images/index/index.jpg"></image>
-
+  <view wx:if="{{ !!dooruser }}" class="viewDL" bindtap="viewDL"></view>
   <view class="ckgz">
     <image class="img" src="../../images/index/ckgz.png"></image>
     <image wx:if="{{ dooruser > 0 }}"  class="img cj" src="../../images/index/cj.png"></image>
@@ -29,6 +32,7 @@
     <view class="row">系统会根据你的选项赠送一副对联，将结果分享至好友或者微信群，通过你的分享点击进来的好友数排在前100名，即可获得系统送出的现金红包，最高388元。</view>
     <image class="img" src="../../images/rule.png"></image>
   </view>
+  <audio src="{{ musicUrl }}" id="myAudio" loop></audio>
 </view>
 
 

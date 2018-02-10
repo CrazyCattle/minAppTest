@@ -5,7 +5,8 @@
     "pages/phb/phb",
     "pages/choujiang/cj",
     "pages/duilian/dl",
-    "pages/view/view"
+    "pages/view/view",
+    "components/music/music"
   ],
   "window": {
     "backgroundTextStyle": "light",

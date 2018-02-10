@@ -9,8 +9,12 @@ Page({
     originData: [],
     showRuleMask: false,
     from_id: "",
-    openid: wx.getStorageSync("openid"),
-    dooruser: 0
+    openid: app.globalData.openid || wx.getStorageSync("openid") || '',
+    dooruser: 0,
+    audioCtx: undefined,
+    musicUrl: 'https://static.mohuso.com/share/music.mp3',
+    musicState: true,
+    musicCanPlay: true
   },
   sRule() {
     this.setData({
@@ -80,26 +84,66 @@ Page({
       }
     });
   },
+  onReady () {
+    this.audioCtx = wx.createAudioContext('myAudio')
+    this.audioCtx.play()
+  },
   onShow: function() {
-    console.log("onShow");
+    // console.log("onShow");
   },
   onHide: function() {
-    console.log("onHide");
+    // console.log("onHide");
   },
   onUnload: function() {
-    console.log("onUnload");
+    // console.log("onUnload");
   },
   onLoad: function(options) {
-    console.log(this.data.openid, 'openid')
-    console.log('全局变量 ---------------', app)
-    if (app) {
-      console.log(1)
-    } else {
-      console.log(2)
+    // 登录
+    if (!app.globalData.userInfo) {
+      new Promise((resolve, reject) => {
+        wx.login({
+          success: res => {
+            // console.log(res);
+            resolve(res);
+          }
+        });
+      }).then(res => {
+        // 获取 openid 以及 session_key
+        wx.request({
+          url: `https://www.mohuso.com/port/wxAuthorization?code=${res.code}`,
+          method: "GET",
+          success: res => {
+            // console.log('dfjkasjfkd-------------', res)
+            // console.log(res.data, res.data.error, res.data.result.openid)
+            if (res.data.error == "0") {
+              app.globalData.openid = res.data.result.openid;
+              this.setData({
+                'openid': res.data.result.openid
+              })
+              // console.log(app.globalData.openid, this.data.openid, 'index--');
+              wx.setStorageSync("openid", res.data.result.openid);
+              // console.log(wx.getStorageSync("openid"))
+            }
+          },
+          fail: (res) => {
+            throw Error(res)
+          },
+          complete: () => {
+            // console.log('wx login')
+          }
+        });
+      });
     }
+    // console.log(this.data.openid, 'openid')
+    // console.log('全局变量 ---------------', app)
+    // if (app) {
+    //   console.log(1)
+    // } else {
+    //   console.log(2)
+    // }
     const self = this;
     if (!!options.from_id) {
-      console.log("我从分享那里来....---------" + options.from_id);
+      // console.log("我从分享那里来....---------" + options.from_id);
       this.setData({
         from_id: options.from_id
       });
@@ -146,7 +190,7 @@ Page({
         method: "GET",
         success: function(res) {
           app.aboutUser = res.data.result;
-          console.log(app.aboutUser);
+          // console.log(app.aboutUser);
           if (e.currentTarget.id == "ckZJ") {
             wx.navigateTo({
               url: `../choujiang/cj?dooruser=${
@@ -175,5 +219,21 @@ Page({
     } else {
       console.log(e, "拒绝时接受到的数据");
     }
+  },
+  viewDL () {
+    wx.navigateTo({
+      url: `../duilian/dl?dooruser=${app.aboutUser.dooruser}`
+    })
+  },
+  toggerMusic () {
+    if (this.data.musicCanPlay) {
+      this.audioCtx.pause()
+    } else {
+      this.audioCtx.play()
+    }
+    this.setData({
+      musicState: !this.data.musicState,
+      musicCanPlay: !this.data.musicCanPlay
+    })
   }
 });

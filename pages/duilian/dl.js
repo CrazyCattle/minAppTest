@@ -66,6 +66,7 @@ Page({
       this.setData({
         dooruser: options.dooruser
       });
+      app.aboutUser.dooruser = options.dooruser
     }
     wx.request({
       url: `https://www.mohuso.com/port/yearGetUser?wxtoken=${app.globalData.openid}`,

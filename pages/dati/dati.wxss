@@ -16,7 +16,7 @@
 
 .hb .hbQuest {
   width: 460rpx;
-  min-height: 500rpx;
+  min-height: 420rpx;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -28,7 +28,7 @@
 .hb .hbQuest .QTitle {
   display: flex;
   align-items: center;
-  min-height: 150rpx;
+  min-height: 120rpx;
   color: #8f391b;
   font-size: 30rpx;
   font-weight: bold;
